@@ -1,0 +1,855 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #F8F8F8;
+    --secondary-bg-color: #fff;
+    --text-color: #000;
+    --pink: #FFADDB;
+    --blue: #91A8EC;
+    --yellow: #F7CB46;
+    --green: #79E8B3;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+    /*10 rem = pt, 9% = px, 2rem = pb */
+}
+
+/* header */
+.header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 9%;
+    background-color: var(--bg-color);
+    z-index: 100;
+}
+
+.yellow {
+    color: var(--yellow);
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: .5rem;
+}
+
+.pink {
+    color: var(--pink);
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: .5rem;
+}
+
+.blue {
+    color: var(--blue);
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: .5rem;
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 6rem;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a:active {
+    color: var(--pink);
+}
+
+/* end header */
+
+/* home */
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img {
+    width: 28vw;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.home-content h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content h3:nth-of-type(1) {
+    color: var(--blue);
+} 
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+span {
+    color: var(--yellow);
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+
+.social-media {
+    display: inline-flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0 3rem 0;
+  }
+  
+  .social-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: .2rem solid var(--text-color);
+    background-color: var(--yellow); /* Warna kuning cerah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .social-icon i {
+    font-size: 24px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--yellow); /* Warna kuning cerah untuk animasi */
+    border-radius: 50%;
+    border: .2rem solid var(--text-color);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform 0.5s ease;
+    transform: scale(0);
+  }
+  
+  .social-icon:hover::after {
+    transform: scale(1.5);
+  }
+  
+  .social-icon:hover {
+    transform: rotate(360deg);
+    background-color: var(--green); /* Warna merah muda cerah saat di hover */
+  }
+  
+  .social-icon:hover i {
+    color: var(--text-color);
+    text-align: center;
+  }
+
+.btn {
+    background: var(--pink);
+    color: var(--text-color);
+    border: .2rem solid var(--text-color);
+    padding: 1rem 2.8rem;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    background: var(--pink);
+    opacity: .8;
+}
+
+/* end home */
+
+/* about */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background-color: var(--secondary-bg-color);
+}
+
+.about-img img {
+    width: 28vw;
+    animation: floatImage 4s ease-in-out infinite;
+    ;
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2.4rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.heading {
+    /* text-align: center; */
+    font-size: 4.5rem;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+/* end about */
+
+/* our services */
+.services h2 {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-container .service-box-html {
+    flex: 1 1 30rem;
+    background: var(--green);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+
+.services-container .service-box-html:hover {
+    border-color: var(--text-color);
+    transform: rotate(-2deg);
+    /* Membuat elemen sedikit miring */
+}
+
+.service-box-html i {
+    font-size: 7rem;
+    color: var(--text-color);
+}
+
+.service-box-html h3 {
+    font-size: 2.6rem;
+}
+
+.service-box-html p {
+    font-size: 1.4rem;
+    margin: 1rem 0 3rem;
+}
+
+.services-container .service-box-css {
+    flex: 1 1 30rem;
+    background: #C5C8FD;
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+
+.services-container .service-box-css:hover {
+    border-color: var(--text-color);
+    transform: rotate(-2deg);
+    /* Membuat elemen sedikit miring */
+}
+
+.service-box-css i {
+    font-size: 7rem;
+    color: var(--text-color);
+}
+
+.service-box-css h3 {
+    font-size: 2.6rem;
+}
+
+.service-box-css p {
+    font-size: 1.4rem;
+    margin: 1rem 0 3rem;
+}
+
+.services-container .service-box-figma {
+    flex: 1 1 30rem;
+    background: #FD7DC6;
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+
+.services-container .service-box-figma:hover {
+    border-color: var(--text-color);
+    transform: rotate(-2deg);
+    /* Membuat elemen sedikit miring */
+}
+
+.service-box-figma i {
+    font-size: 7rem;
+    color: var(--text-color);
+}
+
+.service-box-figma h3 {
+    font-size: 2.6rem;
+}
+
+.service-box-figma p {
+    font-size: 1.4rem;
+    margin: 1rem 0 3rem;
+}
+
+/* end our services */
+
+/* project */
+.project {
+    background: var(--secondary-bg-color);
+    padding-bottom: 10rem;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.project h2 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.project-card {
+    background: #fff;
+    /* border-radius: 20px; */
+    border: .2rem solid var(--text-color);
+    border-radius: 1.6rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+    width: 45%;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    padding: 1rem 1rem 0 1rem;
+    border-radius: 1.6rem;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.furni-desc {
+    background-color: var(--green);
+    padding: .6rem 1rem 1.6rem;
+}
+
+.furni-desc h3 {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 550;
+    margin: .5rem 0;
+}
+
+.furni-desc p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.grow-desc {
+    background-color: var(--blue);
+    padding: .6rem 1rem 1.6rem;
+}
+
+.grow-desc h3 {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 550;
+    margin: .5rem 0;
+}
+
+.grow-desc p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.happyhue-desc {
+    background-color: var(--pink);
+    padding: .6rem 1rem 1.6rem;
+}
+
+.happyhue-desc h3 {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 550;
+    margin: .5rem 0;
+}
+
+.happyhue-desc p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.techgear-desc {
+    background-color: #FFE87F;
+    padding: .6rem 1rem 1.6rem;
+}
+
+.techgear-desc h3 {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 550;
+    margin: .5rem 0;
+}
+
+.techgear-desc p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.portofolio-project {
+    background-color: #FF9728;
+    padding: .6rem 1rem 1rem;
+}
+
+.portofolio-project h3 {
+    color: var(--text-color);
+    font-size: 4rem;
+    font-weight: 550;
+    margin: .5rem 0;
+}
+
+/* end project */
+
+/* my playgrounds */
+.hobbies h2 {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+}
+
+.hobbies-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.hobby-music {
+    background-color: var(--pink);
+    border-radius: 1rem;
+    border: .2rem solid var(--text-color);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.4s ease;
+    text-align: center;
+}
+
+.hobby-music img {
+    width: 25rem;
+    height: 25rem;
+    transition: transform 1s ease;
+}
+
+.hobby-music:hover img {
+    transform: rotate(360deg);
+}
+
+.hobby-music h3 {
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    color: var(--text-color);
+}
+
+.hobby-music p {
+    max-width: 30rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+.hobby-travel {
+    background-color: var(--yellow);
+    border-radius: 1rem;
+    border: .2rem solid var(--text-color);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.4s ease;
+    text-align: center;
+}
+
+.hobby-travel img {
+    width: 25rem;
+    height: 25rem;
+    transition: transform 1s ease;
+}
+
+.hobby-travel:hover img {
+    transform: rotate(360deg);
+}
+
+.hobby-travel h3 {
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    color: var(--text-color);
+}
+
+.hobby-travel p {
+    max-width: 30rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+.hobby-camping {
+    background-color: var(--green);
+    border-radius: 1rem;
+    border: .2rem solid var(--text-color);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.4s ease;
+    text-align: center;
+}
+
+.hobby-camping img {
+    width: 25rem;
+    height: 25rem;
+    transition: transform 1s ease;
+}
+
+.hobby-camping:hover img {
+    transform: rotate(360deg);
+}
+
+.hobby-camping h3 {
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    color: var(--text-color);
+}
+
+.hobby-camping p {
+    max-width: 30rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+/* end my plygrounds */
+
+/* contact */
+.contact {
+    background: var(--secondary-bg-color);
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 4rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--green);
+    border-radius: .8rem;
+    border: .2rem solid var(--text-color);
+    margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+/* end contact */
+
+/* footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    border: .2rem solid var(--text-color);
+    background: var(--yellow);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    border-radius: .8rem;
+    border: .2rem solid var(--text-color);
+    background: var(--blue);
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--yellow);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--text-color);
+}
+
+/* end footer */
+
+/* breakpoints */
+
+/* 
+ukuran yang dipakai =
+1200px
+991px
+768px
+617px
+450px
+356px
+*/
+
+@media(max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+    .hobbies-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+    }
+
+    .hobby-item {
+        padding: 1.5rem;
+    }
+
+    .hobby-item h3 {
+        font-size: 1.25rem;
+    }
+
+    .hobby-item p {
+        font-size: .8rem;
+    }
+}
+
+@media(max-width: 911px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    .section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .contact {
+        min-height: auto;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project-card {
+        width: 60%;
+    }
+
+    .project-card img {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media(max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        padding: 1rem 3%;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home h3 {
+        font-size: 2.6rem;
+    }
+
+    .home h1 {
+        font-size: 5rem;
+    }
+
+    .home-img img {
+        width: 50vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about img {
+        width: 50vw;
+        margin-top: 4rem;
+    }
+
+    .about-content {
+        padding-bottom: 4rem;
+    }
+
+    .project-card {
+        width: 70%;
+    }
+}
+
+@media(max-width: 617px) {
+    .project-card {
+        width: 80%;
+    }
+}
+
+@media(max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+}
+
+@media(max-width: 390px) {
+    .home-img img {
+        width: 80vw;
+    }
+
+    .about-img img {
+        width: 80vw;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
