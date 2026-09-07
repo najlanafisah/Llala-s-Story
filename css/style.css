@@ -144,11 +144,11 @@ span {
     height: 4rem;
     border-radius: 50%;
     border: .2rem solid var(--text-color);
-    background-color: var(--yellow); /* Warna kuning cerah */
+    background-color: var(--yellow);
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease;
     position: relative;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   }
@@ -158,34 +158,10 @@ span {
     color: var(--text-color);
     transition: color 0.3s ease;
   }
-  
-  .social-icon::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: var(--yellow); /* Warna kuning cerah untuk animasi */
-    border-radius: 50%;
-    border: .2rem solid var(--text-color);
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: transform 0.5s ease;
-    transform: scale(0);
-  }
-  
-  .social-icon:hover::after {
-    transform: scale(1.5);
-  }
-  
+
   .social-icon:hover {
-    transform: rotate(360deg);
-    background-color: var(--green); /* Warna merah muda cerah saat di hover */
-  }
-  
-  .social-icon:hover i {
-    color: var(--text-color);
-    text-align: center;
+    background-color: var(--green);
+    transition: .5s;
   }
 
 .btn {
@@ -281,7 +257,6 @@ span {
 .services-container .service-box-html:hover {
     border-color: var(--text-color);
     transform: rotate(-2deg);
-    /* Membuat elemen sedikit miring */
 }
 
 .service-box-html i {
@@ -312,7 +287,6 @@ span {
 .services-container .service-box-css:hover {
     border-color: var(--text-color);
     transform: rotate(-2deg);
-    /* Membuat elemen sedikit miring */
 }
 
 .service-box-css i {
@@ -343,7 +317,6 @@ span {
 .services-container .service-box-figma:hover {
     border-color: var(--text-color);
     transform: rotate(-2deg);
-    /* Membuat elemen sedikit miring */
 }
 
 .service-box-figma i {
@@ -711,7 +684,7 @@ ukuran yang dipakai =
         padding: 1.5rem;
     }
 
-    .hobby-item h3 {
+    .hobby-item h3 { 
         font-size: 1.25rem;
     }
 
